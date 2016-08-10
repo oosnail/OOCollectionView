@@ -19,6 +19,11 @@
 }
 
 -(void)createUI {
+    self.image = [[UIImageView alloc]init];
+    self.image.bounds = CGRectMake(0, 0, 50, 50);
+    self.image.center = CGPointMake(50, 50);
+    [self addSubview:self.image];
+    
     self.userInteractionEnabled = YES;
     self.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
 }

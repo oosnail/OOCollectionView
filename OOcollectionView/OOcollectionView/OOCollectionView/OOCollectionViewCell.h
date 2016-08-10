@@ -8,5 +8,5 @@
 
 #import <UIKit/UIKit.h>
 @interface OOCollectionViewCell : UICollectionViewCell
-
+@property(nonatomic,strong) UIImageView *image;
 @end
