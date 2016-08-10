@@ -8,5 +8,8 @@
 
 #import <UIKit/UIKit.h>
 @interface OOCollectionViewCell : UICollectionViewCell
-@property(nonatomic,strong) UIImageView *image;
+@property(nonatomic,strong) UIImageView *giftImage;
+@property(nonatomic,strong) UILabel *giftTitle;
+@property(nonatomic,strong) UILabel *priceLabel;
+- (void)setmodel:(NSIndexPath*)path;
 @end

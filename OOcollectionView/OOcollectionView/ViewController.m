@@ -15,13 +15,15 @@
 #import "OOCollectionView.h"
 #import "OOExpandCollectionViewFlowLayout.h"
 #import "HMSegmentedControl.h"
+#import "sendGiftView.h"
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,OOExpandCollectionViewFlowLayoutDelegate>
 @property (nonatomic, strong) OOCollectionView *mCollectionView;
 @property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, assign) NSInteger previousSelectedIndex;
-@property (nonatomic, strong) UIView* giftView;
 @property (nonatomic, strong) UIScrollView * giftScrollView;
 @property (nonatomic, strong) HMSegmentedControl* pageControl;
+@property (nonatomic, strong) sendGiftView* sendgiftview;
+
 
 @end
 
@@ -41,20 +43,24 @@
     
     
     _giftScrollView = [[UIScrollView alloc]init];
-    _giftScrollView.frame = CGRectMake(0, 200, kScreenWidth, 100);
+    _giftScrollView.frame = CGRectMake(0, 200, kScreenWidth, 111);
     _giftScrollView.delegate = self;
     _giftScrollView.pagingEnabled = YES;
     _giftScrollView.scrollEnabled = NO;
+    _giftScrollView.clipsToBounds = NO;
+
     [self.view addSubview:_giftScrollView];
     
     for (int i = 0; i<3; i++) {
-        OOCollectionView *_collectionView = [[OOCollectionView alloc]initWithFrame:CGRectMake(i*kScreenWidth, 0, kScreenWidth, 100) collectionViewLayout:layOut];
-        _collectionView.backgroundColor = [UIColor blackColor];
+        OOCollectionView *_collectionView = [[OOCollectionView alloc]initWithFrame:CGRectMake(i*kScreenWidth, 0, kScreenWidth, _giftScrollView.bounds.size.height)
+                                                              collectionViewLayout:layOut];
+        _collectionView.backgroundColor = [UIColor whiteColor];
         [_collectionView registerClass:[OOCollectionViewCell class] forCellWithReuseIdentifier: NSStringFromClass([OOCollectionViewCell class])];
         [self.view addSubview:_mCollectionView];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         //    layOut.delegate = self;
+        _collectionView.clipsToBounds = NO;
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.showsHorizontalScrollIndicator = NO;
         [_giftScrollView addSubview:_collectionView];
@@ -79,11 +85,10 @@
     self.pageControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     self.pageControl.sectionTitles = @[@"测试",@"测试",@"测试"];
     [self.view addSubview:self.pageControl];
+    
+    //初始化
+    self.sendgiftview = [[sendGiftView alloc]initWithFrame:CGRectMake(0, 0, 100, 105)];
 
-    self.giftView = [[UIView alloc]init];
-    self.giftView.frame = CGRectMake(50, 20, 40, 40);
-    self.giftView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:self.giftView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,10 +102,10 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"OOCollectionViewCell";
     OOCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    cell.image.image = [UIImage imageNamed:@"bg_tk_003"];
+    [cell setmodel:indexPath];
     //是否颤抖
     {
-        [self shakeView:cell.image];
+        [self shakeView:cell.giftImage];
     }
     return cell;
 }
@@ -117,45 +122,75 @@
     NSLog(@"selected : %td", indexPath.row);
     //获取view
     
-//    UICollectionViewCell *cell = [self collectionView:collectionView cellForItemAtIndexPath:indexPath];
-//    CGRect rect = cell.frame;
+    UICollectionViewCell *cell = [self collectionView:collectionView cellForItemAtIndexPath:indexPath];
+    CGRect rect = cell.frame;
 //    self.giftView.frame = rect;
     
     self.previousSelectedIndex = self.selectedIndex;
     self.selectedIndex = indexPath.row;
     OOCollectionView *_collectView = (OOCollectionView*)collectionView;
-//    [_collectView reloadItemsAtIndexPaths:@[indexPath]];
     [_collectView reloadData];
-    [self shakeView:self.giftView];
-//    [_collectView expandAtIndex:indexPath.row animated:YES];
+    
+    
+    
+    //此处加动画效果
+    [self.sendgiftview removeFromSuperview];
+    //修改
+    self.sendgiftview.center = CGPointMake(rect.origin.x+rect.size.width/2.f, 40);
+//    self.sendgiftview.bounds = CGRectZero;
+    [self.sendgiftview setModel:indexPath];
+    self.sendgiftview.transform =CGAffineTransformMakeScale( 0, 0);
+    
+    [UIView animateWithDuration:0.2
+                     animations:^{
+                         self.sendgiftview.transform =CGAffineTransformMakeScale( 1, 1);
+                     }
+                     completion:^(BOOL finished) {
+                     }];
+    
+    [collectionView addSubview:self.sendgiftview];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.row == self.selectedIndex){
 //        return CGSizeMake(kScaleFrom_iPhone5_Desgin(100), kScaleFrom_iPhone5_Desgin(120));
     }
-    return CGSizeMake(kScaleFrom_iPhone5_Desgin(84), kScaleFrom_iPhone5_Desgin(60));
+//    return CGSizeMake(kScaleFrom_iPhone5_Desgin(84), kScaleFrom_iPhone5_Desgin(60));
+    return CGSizeMake(45+30,81);
 }
 
-
-
-- (CGFloat) collectionView:(UICollectionView *)collectionView
-                    layout:(UICollectionViewLayout *)collectionViewLayout
-minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    if(self.selectedIndex == 2){
-        return 10;
-    }
-    return 5.0f;
+    return UIEdgeInsetsMake(15, 15, 15, 15);//分别为上、左、下、右
 }
+//
+//
+//
+//- (CGFloat) collectionView:(UICollectionView *)collectionView
+//                    layout:(UICollectionViewLayout *)collectionViewLayout
+//minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+//{
+////    if(self.selectedIndex == 2){
+////        return 10;
+////    }
+//    return 0;
+//}
 
 //获取scrollview 的偏移量 如果滑到底 或者滑到头 那么移动到下一个
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView;{
-    
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    if(scrollView.contentOffset.x +scrollView.bounds.size.width > scrollView.contentSize.width+30){
+//        if(self.pageControl.selectedSegmentIndex <2){
+//            [self.pageControl setSelectedSegmentIndex:self.pageControl.selectedSegmentIndex+1];
+//        }
+//    }else if(scrollView.contentOffset.x< -30){
+//        if(self.pageControl.selectedSegmentIndex > 0){
+//            [self.pageControl setSelectedSegmentIndex:self.pageControl.selectedSegmentIndex-1];
+//        }
+//    }
 }
-- (void)scrollViewDidZoom:(UIScrollView *)scrollView{
-    
-}
+
+
+
 #pragma mark - DaiExpandCollectionViewFlowLayoutDelegate
 
 - (NSIndexPath *)selectedIndexPath {

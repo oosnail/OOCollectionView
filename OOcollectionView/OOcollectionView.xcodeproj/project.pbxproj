@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		038EA0DB1D5B775000AD9F08 /* testImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038EA0DA1D5B775000AD9F08 /* testImage@2x.png */; };
+		038EA0DE1D5B8DF400AD9F08 /* sendGiftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 038EA0DD1D5B8DF400AD9F08 /* sendGiftView.m */; };
 		1C1F8C741D585ED80081930B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C731D585ED80081930B /* main.m */; };
 		1C1F8C771D585ED80081930B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C761D585ED80081930B /* AppDelegate.m */; };
 		1C1F8C7A1D585ED80081930B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C791D585ED80081930B /* ViewController.m */; };
@@ -22,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		038EA0DA1D5B775000AD9F08 /* testImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testImage@2x.png"; sourceTree = "<group>"; };
+		038EA0DC1D5B8DF400AD9F08 /* sendGiftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sendGiftView.h; sourceTree = "<group>"; };
+		038EA0DD1D5B8DF400AD9F08 /* sendGiftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sendGiftView.m; sourceTree = "<group>"; };
 		1C1F8C6F1D585ED70081930B /* OOcollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OOcollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C1F8C731D585ED80081930B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1C1F8C751D585ED80081930B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,6 +64,7 @@
 		1C1F8C661D585ED70081930B = {
 			isa = PBXGroup;
 			children = (
+				038EA0DA1D5B775000AD9F08 /* testImage@2x.png */,
 				1C1F8C711D585ED80081930B /* OOcollectionView */,
 				1C1F8C701D585ED70081930B /* Products */,
 			);
@@ -110,6 +116,8 @@
 				1C1F8C8E1D5861600081930B /* OOCollectionViewCell.m */,
 				1C1F8C931D5871B50081930B /* OOExpandCollectionViewFlowLayout.h */,
 				1C1F8C941D5871B50081930B /* OOExpandCollectionViewFlowLayout.m */,
+				038EA0DC1D5B8DF400AD9F08 /* sendGiftView.h */,
+				038EA0DD1D5B8DF400AD9F08 /* sendGiftView.m */,
 			);
 			path = OOCollectionView;
 			sourceTree = "<group>";
@@ -181,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C1F8C821D585ED80081930B /* LaunchScreen.storyboard in Resources */,
+				038EA0DB1D5B775000AD9F08 /* testImage@2x.png in Resources */,
 				1C1F8C7F1D585ED80081930B /* Assets.xcassets in Resources */,
 				1C1F8C971D598B020081930B /* bg_tk_003@2x.png in Resources */,
 				1C1F8C7D1D585ED80081930B /* Main.storyboard in Resources */,
@@ -201,6 +210,7 @@
 				1C1F8C951D5871B50081930B /* OOExpandCollectionViewFlowLayout.m in Sources */,
 				1C1F8C921D5869E50081930B /* DaiExpandCollectionViewFlowLayout.m in Sources */,
 				1C1F8C8C1D585F410081930B /* OOCollectionView.m in Sources */,
+				038EA0DE1D5B8DF400AD9F08 /* sendGiftView.m in Sources */,
 				1C1F8C741D585ED80081930B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +324,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OOcollectionView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.ztc.com.OOcollectionView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -325,6 +336,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OOcollectionView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.ztc.com.OOcollectionView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
