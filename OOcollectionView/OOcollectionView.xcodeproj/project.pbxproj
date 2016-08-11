@@ -48,7 +48,7 @@
 		1C1F8C8B1D585F410081930B /* OOCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOCollectionView.m; path = ../OOCollectionView/OOCollectionView.m; sourceTree = "<group>"; };
 		1C1F8C8D1D5861600081930B /* OOCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOCollectionViewCell.h; path = ../OOCollectionView/OOCollectionViewCell.h; sourceTree = "<group>"; };
 		1C1F8C8E1D5861600081930B /* OOCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOCollectionViewCell.m; path = ../OOCollectionView/OOCollectionViewCell.m; sourceTree = "<group>"; };
-		1C1F8C961D598B010081930B /* bg_tk_003@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_tk_003@2x.png"; sourceTree = "<group>"; };
+		1C1F8C961D598B010081930B /* bg_tk_003@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_tk_003@2x.png"; path = "OOcollectionView/OOCollectionView/bg_tk_003@2x.png"; sourceTree = "<group>"; };
 		1C1F8C991D5B39800081930B /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		1C1F8C9A1D5B39800081930B /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		1C1F8C9D1D5C43D90081930B /* UIColor+DXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DXExtension.h"; sourceTree = "<group>"; };
@@ -86,9 +86,20 @@
 			path = OOGiftScrollerView;
 			sourceTree = "<group>";
 		};
+		038EA0E51D5CEE2900AD9F08 /* third */ = {
+			isa = PBXGroup;
+			children = (
+				1C1F8CA01D5C453D0081930B /* EMOJLabel */,
+				1C1F8C9C1D5C43C80081930B /* extentension */,
+				1C1F8C981D5B39800081930B /* HMSegmentedControl */,
+			);
+			name = third;
+			sourceTree = "<group>";
+		};
 		1C1F8C661D585ED70081930B = {
 			isa = PBXGroup;
 			children = (
+				1C1F8C961D598B010081930B /* bg_tk_003@2x.png */,
 				038EA0DF1D5CCC4E00AD9F08 /* Intergral2@2x.png */,
 				038EA0DA1D5B775000AD9F08 /* testImage@2x.png */,
 				1C1F8C711D585ED80081930B /* OOcollectionView */,
@@ -107,11 +118,8 @@
 		1C1F8C711D585ED80081930B /* OOcollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				038EA0E51D5CEE2900AD9F08 /* third */,
 				038EA0E11D5CD4A800AD9F08 /* OOGiftScrollerView */,
-				1C1F8CA01D5C453D0081930B /* EMOJLabel */,
-				1C1F8C9C1D5C43C80081930B /* extentension */,
-				1C1F8C981D5B39800081930B /* HMSegmentedControl */,
-				1C1F8C891D585F200081930B /* OOCollectionView */,
 				1C1F8C751D585ED80081930B /* AppDelegate.h */,
 				1C1F8C761D585ED80081930B /* AppDelegate.m */,
 				1C1F8C781D585ED80081930B /* ViewController.h */,
@@ -131,14 +139,6 @@
 				1C1F8C731D585ED80081930B /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		1C1F8C891D585F200081930B /* OOCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				1C1F8C961D598B010081930B /* bg_tk_003@2x.png */,
-			);
-			path = OOCollectionView;
 			sourceTree = "<group>";
 		};
 		1C1F8C981D5B39800081930B /* HMSegmentedControl */ = {

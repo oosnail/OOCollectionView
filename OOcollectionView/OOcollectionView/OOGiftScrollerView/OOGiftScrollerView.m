@@ -10,6 +10,7 @@
 #import "OOGiftScrollerView.h"
 #import "HMSegmentedControl.h"
 #import "sendGiftView.h"
+#import "UIColor+DXExtension.h"
 @interface OOGiftScrollerView ()<UICollectionViewDataSource,UICollectionViewDelegate>
 {
     BOOL shakeAnimal;
@@ -34,8 +35,7 @@
 
 - (void)UIInit{
     
-    UICollectionViewFlowLayout *layOut = [[UICollectionViewFlowLayout alloc]init];
-    layOut.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+
     
     
     _giftScrollView = [[UIScrollView alloc]init];
@@ -47,7 +47,52 @@
     
     [self addSubview:_giftScrollView];
     
-    for (int i = 0; i<3; i++) {
+
+//    [self setgiftCollectView];
+    
+    
+    //segment
+    self.pageControl = [[HMSegmentedControl alloc]initWithFrame:CGRectMake(0, _giftScrollView.frame.origin.y + _giftScrollView.frame.size.height, kScreenWidth, 50)];
+    [self.pageControl addTarget:self
+                         action:@selector(pageControlValueChanged:)
+               forControlEvents:UIControlEventValueChanged];
+    self.pageControl.backgroundColor = [UIColor whiteColor];
+    self.pageControl.segmentWidthStyle = HMSegmentedControlSegmentWidthStyleFixed;
+    self.pageControl.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor colorFromHexString:@"333333"],NSFontAttributeName:[UIFont systemFontOfSize:16]};
+    self.pageControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorFromHexString:@"9d8be9"],NSFontAttributeName:[UIFont systemFontOfSize:16]};
+    self.pageControl.selectionIndicatorColor = [UIColor colorFromHexString:@"9d8be9"];
+    [self.pageControl setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
+    self.pageControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    self.pageControl.selectionIndicatorColor = [UIColor colorFromHexString:@"9d8be9"];
+    self.pageControl.selectionIndicatorHeight = 2;
+    self.pageControl.sectionTitles = [self.giftScrollerViewdelegate titlesInGiftView:self];
+
+//    int a = [self.giftScrollerViewdelegate giftView:self numberOfRowsInSection:0];
+    
+    [self addSubview:self.pageControl];
+    
+    //初始化
+    self.sendgiftview = [[sendGiftView alloc]initWithFrame:CGRectMake(0, 0, 100, 105)];
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(sendGift:)];
+    [self.sendgiftview addGestureRecognizer:gesture];
+//    [self setgiftCollectView];
+}
+
+
+- (void)setgiftCollectView{
+    NSArray * _arr = [self.giftScrollerViewdelegate titlesInGiftView:self];
+    self.pageControl.sectionTitles = _arr;
+    
+//    for(UIView *v in self.giftScrollView.subviews){
+//        [v removeFromSuperview];
+//    }
+//    
+    UICollectionViewFlowLayout *layOut = [[UICollectionViewFlowLayout alloc]init];
+    layOut.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    NSInteger count = _arr.count;
+    
+    for (int i = 0; i<count; i++) {
         OOCollectionView *_collectionView = [[OOCollectionView alloc]initWithFrame:CGRectMake(i*kScreenWidth, 0, kScreenWidth, _giftScrollView.bounds.size.height)
                                                               collectionViewLayout:layOut];
         _collectionView.backgroundColor = [UIColor whiteColor];
@@ -60,35 +105,15 @@
         _collectionView.showsHorizontalScrollIndicator = NO;
         [_giftScrollView addSubview:_collectionView];
     }
-    
-    
-    //segment
-    self.pageControl = [[HMSegmentedControl alloc]initWithFrame:CGRectMake(0, _giftScrollView.frame.origin.y + _giftScrollView.frame.size.height, kScreenWidth, 50)];
-    [self.pageControl addTarget:self
-                         action:@selector(pageControlValueChanged:)
-               forControlEvents:UIControlEventValueChanged];
-    self.pageControl.backgroundColor = [UIColor whiteColor];
-    self.pageControl.segmentWidthStyle = HMSegmentedControlSegmentWidthStyleFixed;
-    self.pageControl.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:16]};
-    self.pageControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor redColor],NSFontAttributeName:[UIFont systemFontOfSize:16]};
-    self.pageControl.selectionIndicatorColor = [UIColor redColor];
-    [self.pageControl setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
-    self.pageControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
-    self.pageControl.sectionTitles = [self.giftScrollerViewdelegate titlesInGiftView:self];
-
-//    int a = [self.giftScrollerViewdelegate giftView:self numberOfRowsInSection:0];
-    
-    [self addSubview:self.pageControl];
-    
-    //初始化
-    self.sendgiftview = [[sendGiftView alloc]initWithFrame:CGRectMake(0, 0, 100, 105)];
 }
 
 - (void)reload{
+    [self setgiftCollectView];
 }
 
 - (void)layoutSubviews{
     [self UIInit];
+    [self setgiftCollectView];
 }
 
 
@@ -108,7 +133,8 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 20;
+    return [self.giftScrollerViewdelegate giftView:self numberOfRowsInSection:section];
+//    return 20;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -163,6 +189,14 @@
 
 - (void)pageControlValueChanged:(id)sender {
     [_giftScrollView setContentOffset:CGPointMake(kScreenWidth*_pageControl.selectedSegmentIndex, 0) animated:YES];
+}
+
+- (void)sendGift:(UITapGestureRecognizer*)gesture{
+    [self.sendgiftview removeFromSuperview];
+    if(self.giftScrollerViewdelegate && [self.giftScrollerViewdelegate respondsToSelector:@selector(giftViewSend:NSIndexPath:)]){
+        NSIndexPath *path = [NSIndexPath indexPathForRow:self.pageControl.selectedSegmentIndex inSection:self.selectedIndex];
+        [self.giftScrollerViewdelegate giftViewSend:self NSIndexPath:path];
+    }
 }
 
 //颤抖

@@ -10,11 +10,6 @@
 #import "ViewController.h"
 #import "OOGiftScrollerView.h"
 @interface ViewController ()<OOGiftScrollerViewDelegate>
-@property (nonatomic, strong) OOCollectionView *mCollectionView;
-@property (nonatomic, assign) NSInteger selectedIndex;
-@property (nonatomic, assign) NSInteger previousSelectedIndex;
-@property (nonatomic, strong) UIScrollView * giftScrollView;
-
 
 @end
 
@@ -45,6 +40,10 @@
 
 - (NSInteger)giftView:(OOGiftScrollerView *)giftview numberOfRowsInSection:(NSInteger)section{
     return 10;
+}
+
+- (void)giftViewSend:(OOGiftScrollerView *)giftview NSIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"送出礼物");
 }
 
 

@@ -20,6 +20,9 @@
 @required
 - (NSArray* ) titlesInGiftView:(OOGiftScrollerView *)giftview;   //一共多少选择
 - (NSInteger)giftView:(OOGiftScrollerView *)giftview numberOfRowsInSection:(NSInteger)section;
+@optional
+
+- (void)giftViewSend:(OOGiftScrollerView *)giftview NSIndexPath:(NSIndexPath *)indexPath;;
 
 @end
 
