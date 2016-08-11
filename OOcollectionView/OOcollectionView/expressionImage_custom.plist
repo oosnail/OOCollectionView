@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>[下雨]</key>
-	<string>49.png</string>
 	<key>[亲亲]</key>
 	<string>44.png</string>
 	<key>[亲嘴]</key>
@@ -127,6 +125,6 @@
 	<key>[机票]</key>
 	<string>lp_taoxi_jipiao_icon</string>
 	<key>[测试]</key>
-	<string>lp_detail_smallicon_zaoxing</string>
+	<string>Intergral2</string>
 </dict>
 </plist>

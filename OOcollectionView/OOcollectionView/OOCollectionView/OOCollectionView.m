@@ -18,7 +18,6 @@
 //原来的大小
 @property (nonatomic, assign) CGSize originalSize;
 @property (nonatomic, assign) NSInteger itemsInRow;
-@property (nonatomic, strong) OOExpandCollectionViewFlowLayout *expandCollectionViewFlowLayout;
 
 @end
 

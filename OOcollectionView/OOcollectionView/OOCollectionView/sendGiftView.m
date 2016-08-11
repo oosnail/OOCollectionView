@@ -7,7 +7,7 @@
 //
 
 #import "sendGiftView.h"
-
+#import "UIColor+DXExtension.h"
 @implementation sendGiftView
 //@property (nonatomic,strong)UIImageView* giftImageView;
 //@property (nonatomic,strong)UILabel* giftPriceLabel;
@@ -26,7 +26,7 @@
     CGFloat _width = self.bounds.size.width;
     CGFloat _height = self.bounds.size.height;
     
-    self.backgroundColor = [UIColor redColor];
+    self.backgroundColor = [UIColor whiteColor];
     
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = 15;
@@ -40,11 +40,13 @@
     
     CGFloat _y = self.giftImageView.frame.origin.y + self.giftImageView.frame.size.width+2;
     
-     self.giftPriceLabel = [[UILabel alloc]init];
+     self.giftPriceLabel = [[MLEmojiLabel alloc]init];
     self.giftPriceLabel.bounds = CGRectMake(0, 0, _width, 15);
     self.giftPriceLabel.center = CGPointMake(_width/2.f, _y+15/2.f);
     self.giftPriceLabel.font = [UIFont systemFontOfSize:14];
-    self.giftPriceLabel.textColor = [UIColor whiteColor];
+    self.giftPriceLabel.textColor = [UIColor colorFromHexString:@"333333"];
+    self.giftPriceLabel.customEmojiRegex = @"\\[[a-zA-Z0-9\\u4e00-\\u9fa5]+\\]";
+    self.giftPriceLabel.customEmojiPlistName = @"expressionImage_custom";
     self.giftPriceLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.giftPriceLabel];
     
@@ -54,6 +56,7 @@
     sendLable.font = [UIFont systemFontOfSize:14];
     sendLable.textColor = [UIColor whiteColor];
     sendLable.textAlignment = NSTextAlignmentCenter;
+
     sendLable.backgroundColor = [UIColor blueColor];
     
     //只对下半部分圆角
@@ -70,7 +73,8 @@
 
 - (void)setModel:(NSIndexPath*)path{
     self.giftImageView.image = [UIImage imageNamed:@"testImage"];
-    [self.giftPriceLabel setText:@"10"];
+    self.giftPriceLabel.text = @"2000 [测试]";
+
 
 }
 

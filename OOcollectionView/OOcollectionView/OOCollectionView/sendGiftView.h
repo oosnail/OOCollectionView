@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MLEmojiLabel.h"
 @interface sendGiftView : UIView
 @property (nonatomic,strong)UIImageView* giftImageView;
-@property (nonatomic,strong)UILabel* giftPriceLabel;
+@property (nonatomic,strong)MLEmojiLabel* giftPriceLabel;
 - (void)setModel:(NSIndexPath*)path;
 
 @end

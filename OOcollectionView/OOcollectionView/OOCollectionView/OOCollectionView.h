@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "OOCollectionViewCell.h"
-#import "DaiExpandCollectionViewFlowLayout.h"
-#import "OOExpandCollectionViewFlowLayout.h"
 @interface OOCollectionView : UICollectionView
 
 - (void)expandAtIndex:(NSInteger)index animated:(BOOL)animated;

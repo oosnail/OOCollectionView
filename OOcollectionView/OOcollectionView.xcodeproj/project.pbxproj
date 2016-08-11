@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		038EA0DB1D5B775000AD9F08 /* testImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038EA0DA1D5B775000AD9F08 /* testImage@2x.png */; };
 		038EA0DE1D5B8DF400AD9F08 /* sendGiftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 038EA0DD1D5B8DF400AD9F08 /* sendGiftView.m */; };
+		038EA0E01D5CCC4E00AD9F08 /* Intergral2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038EA0DF1D5CCC4E00AD9F08 /* Intergral2@2x.png */; };
+		038EA0E41D5CD4C200AD9F08 /* OOGiftScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 038EA0E31D5CD4C200AD9F08 /* OOGiftScrollerView.m */; };
 		1C1F8C741D585ED80081930B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C731D585ED80081930B /* main.m */; };
 		1C1F8C771D585ED80081930B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C761D585ED80081930B /* AppDelegate.m */; };
 		1C1F8C7A1D585ED80081930B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C791D585ED80081930B /* ViewController.m */; };
@@ -17,8 +19,6 @@
 		1C1F8C821D585ED80081930B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1F8C801D585ED80081930B /* LaunchScreen.storyboard */; };
 		1C1F8C8C1D585F410081930B /* OOCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C8B1D585F410081930B /* OOCollectionView.m */; };
 		1C1F8C8F1D5861600081930B /* OOCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C8E1D5861600081930B /* OOCollectionViewCell.m */; };
-		1C1F8C921D5869E50081930B /* DaiExpandCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C911D5869E50081930B /* DaiExpandCollectionViewFlowLayout.m */; };
-		1C1F8C951D5871B50081930B /* OOExpandCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C941D5871B50081930B /* OOExpandCollectionViewFlowLayout.m */; };
 		1C1F8C971D598B020081930B /* bg_tk_003@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C1F8C961D598B010081930B /* bg_tk_003@2x.png */; };
 		1C1F8C9B1D5B39800081930B /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C9A1D5B39800081930B /* HMSegmentedControl.m */; };
 		1C1F8C9F1D5C43D90081930B /* UIColor+DXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C9E1D5C43D90081930B /* UIColor+DXExtension.m */; };
@@ -29,8 +29,11 @@
 
 /* Begin PBXFileReference section */
 		038EA0DA1D5B775000AD9F08 /* testImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testImage@2x.png"; sourceTree = "<group>"; };
-		038EA0DC1D5B8DF400AD9F08 /* sendGiftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sendGiftView.h; sourceTree = "<group>"; };
-		038EA0DD1D5B8DF400AD9F08 /* sendGiftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sendGiftView.m; sourceTree = "<group>"; };
+		038EA0DC1D5B8DF400AD9F08 /* sendGiftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sendGiftView.h; path = ../OOCollectionView/sendGiftView.h; sourceTree = "<group>"; };
+		038EA0DD1D5B8DF400AD9F08 /* sendGiftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = sendGiftView.m; path = ../OOCollectionView/sendGiftView.m; sourceTree = "<group>"; };
+		038EA0DF1D5CCC4E00AD9F08 /* Intergral2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Intergral2@2x.png"; sourceTree = "<group>"; };
+		038EA0E21D5CD4C200AD9F08 /* OOGiftScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OOGiftScrollerView.h; sourceTree = "<group>"; };
+		038EA0E31D5CD4C200AD9F08 /* OOGiftScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOGiftScrollerView.m; sourceTree = "<group>"; };
 		1C1F8C6F1D585ED70081930B /* OOcollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OOcollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C1F8C731D585ED80081930B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1C1F8C751D585ED80081930B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -41,14 +44,10 @@
 		1C1F8C7E1D585ED80081930B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C1F8C811D585ED80081930B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C1F8C831D585ED80081930B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C1F8C8A1D585F410081930B /* OOCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OOCollectionView.h; sourceTree = "<group>"; };
-		1C1F8C8B1D585F410081930B /* OOCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOCollectionView.m; sourceTree = "<group>"; };
-		1C1F8C8D1D5861600081930B /* OOCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OOCollectionViewCell.h; sourceTree = "<group>"; };
-		1C1F8C8E1D5861600081930B /* OOCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOCollectionViewCell.m; sourceTree = "<group>"; };
-		1C1F8C901D5869E50081930B /* DaiExpandCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiExpandCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		1C1F8C911D5869E50081930B /* DaiExpandCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiExpandCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		1C1F8C931D5871B50081930B /* OOExpandCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OOExpandCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		1C1F8C941D5871B50081930B /* OOExpandCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOExpandCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		1C1F8C8A1D585F410081930B /* OOCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOCollectionView.h; path = ../OOCollectionView/OOCollectionView.h; sourceTree = "<group>"; };
+		1C1F8C8B1D585F410081930B /* OOCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOCollectionView.m; path = ../OOCollectionView/OOCollectionView.m; sourceTree = "<group>"; };
+		1C1F8C8D1D5861600081930B /* OOCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOCollectionViewCell.h; path = ../OOCollectionView/OOCollectionViewCell.h; sourceTree = "<group>"; };
+		1C1F8C8E1D5861600081930B /* OOCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOCollectionViewCell.m; path = ../OOCollectionView/OOCollectionViewCell.m; sourceTree = "<group>"; };
 		1C1F8C961D598B010081930B /* bg_tk_003@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_tk_003@2x.png"; sourceTree = "<group>"; };
 		1C1F8C991D5B39800081930B /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		1C1F8C9A1D5B39800081930B /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
@@ -72,9 +71,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		038EA0E11D5CD4A800AD9F08 /* OOGiftScrollerView */ = {
+			isa = PBXGroup;
+			children = (
+				1C1F8C8A1D585F410081930B /* OOCollectionView.h */,
+				1C1F8C8B1D585F410081930B /* OOCollectionView.m */,
+				1C1F8C8D1D5861600081930B /* OOCollectionViewCell.h */,
+				1C1F8C8E1D5861600081930B /* OOCollectionViewCell.m */,
+				038EA0DC1D5B8DF400AD9F08 /* sendGiftView.h */,
+				038EA0DD1D5B8DF400AD9F08 /* sendGiftView.m */,
+				038EA0E21D5CD4C200AD9F08 /* OOGiftScrollerView.h */,
+				038EA0E31D5CD4C200AD9F08 /* OOGiftScrollerView.m */,
+			);
+			path = OOGiftScrollerView;
+			sourceTree = "<group>";
+		};
 		1C1F8C661D585ED70081930B = {
 			isa = PBXGroup;
 			children = (
+				038EA0DF1D5CCC4E00AD9F08 /* Intergral2@2x.png */,
 				038EA0DA1D5B775000AD9F08 /* testImage@2x.png */,
 				1C1F8C711D585ED80081930B /* OOcollectionView */,
 				1C1F8C701D585ED70081930B /* Products */,
@@ -92,6 +107,7 @@
 		1C1F8C711D585ED80081930B /* OOcollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				038EA0E11D5CD4A800AD9F08 /* OOGiftScrollerView */,
 				1C1F8CA01D5C453D0081930B /* EMOJLabel */,
 				1C1F8C9C1D5C43C80081930B /* extentension */,
 				1C1F8C981D5B39800081930B /* HMSegmentedControl */,
@@ -121,16 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				1C1F8C961D598B010081930B /* bg_tk_003@2x.png */,
-				1C1F8C901D5869E50081930B /* DaiExpandCollectionViewFlowLayout.h */,
-				1C1F8C911D5869E50081930B /* DaiExpandCollectionViewFlowLayout.m */,
-				1C1F8C8A1D585F410081930B /* OOCollectionView.h */,
-				1C1F8C8B1D585F410081930B /* OOCollectionView.m */,
-				1C1F8C8D1D5861600081930B /* OOCollectionViewCell.h */,
-				1C1F8C8E1D5861600081930B /* OOCollectionViewCell.m */,
-				1C1F8C931D5871B50081930B /* OOExpandCollectionViewFlowLayout.h */,
-				1C1F8C941D5871B50081930B /* OOExpandCollectionViewFlowLayout.m */,
-				038EA0DC1D5B8DF400AD9F08 /* sendGiftView.h */,
-				038EA0DD1D5B8DF400AD9F08 /* sendGiftView.m */,
 			);
 			path = OOCollectionView;
 			sourceTree = "<group>";
@@ -222,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038EA0E01D5CCC4E00AD9F08 /* Intergral2@2x.png in Resources */,
 				1C1F8C821D585ED80081930B /* LaunchScreen.storyboard in Resources */,
 				038EA0DB1D5B775000AD9F08 /* testImage@2x.png in Resources */,
 				1C1F8C7F1D585ED80081930B /* Assets.xcassets in Resources */,
@@ -241,10 +248,9 @@
 				1C1F8CA31D5C45510081930B /* MLEmojiLabel.m in Sources */,
 				1C1F8C7A1D585ED80081930B /* ViewController.m in Sources */,
 				1C1F8C9B1D5B39800081930B /* HMSegmentedControl.m in Sources */,
+				038EA0E41D5CD4C200AD9F08 /* OOGiftScrollerView.m in Sources */,
 				1C1F8C771D585ED80081930B /* AppDelegate.m in Sources */,
 				1C1F8C8F1D5861600081930B /* OOCollectionViewCell.m in Sources */,
-				1C1F8C951D5871B50081930B /* OOExpandCollectionViewFlowLayout.m in Sources */,
-				1C1F8C921D5869E50081930B /* DaiExpandCollectionViewFlowLayout.m in Sources */,
 				1C1F8C8C1D585F410081930B /* OOCollectionView.m in Sources */,
 				038EA0DE1D5B8DF400AD9F08 /* sendGiftView.m in Sources */,
 				1C1F8C741D585ED80081930B /* main.m in Sources */,

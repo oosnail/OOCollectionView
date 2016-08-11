@@ -42,11 +42,13 @@
     [self addSubview:self.giftTitle];
     _height = _height+self.giftTitle.bounds.size.height;
     
-    self.priceLabel = [[UILabel alloc]init];
+    self.priceLabel = [[MLEmojiLabel alloc]init];
     self.priceLabel.frame = CGRectMake(0, _height, _width, 15);
     self.priceLabel.font = [UIFont systemFontOfSize:11];
     self.priceLabel.textColor = [UIColor blackColor];
     self.priceLabel.textAlignment = NSTextAlignmentCenter;
+    self.priceLabel.customEmojiRegex = @"\\[[a-zA-Z0-9\\u4e00-\\u9fa5]+\\]";
+    self.priceLabel.customEmojiPlistName = @"expressionImage_custom";
     [self addSubview:self.priceLabel];
     
 //    self.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
@@ -56,7 +58,8 @@
 - (void)setmodel:(NSIndexPath*)path{
     self.giftImage.image = [UIImage imageNamed:@"testImage"];
     self.giftTitle.text = [NSString stringWithFormat:@"%@%ld",@"礼物",(long)path.row];
-    self.priceLabel.text = @"2000";
+    self.priceLabel.text = @"2000 [测试]";
+
 }
 
 @end
