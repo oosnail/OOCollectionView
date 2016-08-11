@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MLEmojiLabel.h"
 @interface OOCollectionViewCell : UICollectionViewCell
 @property(nonatomic,strong) UIImageView *giftImage;
 @property(nonatomic,strong) UILabel *giftTitle;
-@property(nonatomic,strong) UILabel *priceLabel;
+@property(nonatomic,strong) MLEmojiLabel *priceLabel;
 - (void)setmodel:(NSIndexPath*)path;
 @end

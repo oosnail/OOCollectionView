@@ -21,6 +21,10 @@
 		1C1F8C951D5871B50081930B /* OOExpandCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C941D5871B50081930B /* OOExpandCollectionViewFlowLayout.m */; };
 		1C1F8C971D598B020081930B /* bg_tk_003@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C1F8C961D598B010081930B /* bg_tk_003@2x.png */; };
 		1C1F8C9B1D5B39800081930B /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C9A1D5B39800081930B /* HMSegmentedControl.m */; };
+		1C1F8C9F1D5C43D90081930B /* UIColor+DXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8C9E1D5C43D90081930B /* UIColor+DXExtension.m */; };
+		1C1F8CA31D5C45510081930B /* MLEmojiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8CA21D5C45510081930B /* MLEmojiLabel.m */; };
+		1C1F8CA61D5C45670081930B /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F8CA51D5C45670081930B /* TTTAttributedLabel.m */; };
+		1C1F8CA81D5C462C0081930B /* expressionImage_custom.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C1F8CA71D5C462C0081930B /* expressionImage_custom.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,13 @@
 		1C1F8C961D598B010081930B /* bg_tk_003@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_tk_003@2x.png"; sourceTree = "<group>"; };
 		1C1F8C991D5B39800081930B /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		1C1F8C9A1D5B39800081930B /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		1C1F8C9D1D5C43D90081930B /* UIColor+DXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DXExtension.h"; sourceTree = "<group>"; };
+		1C1F8C9E1D5C43D90081930B /* UIColor+DXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DXExtension.m"; sourceTree = "<group>"; };
+		1C1F8CA11D5C45510081930B /* MLEmojiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLEmojiLabel.h; sourceTree = "<group>"; };
+		1C1F8CA21D5C45510081930B /* MLEmojiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLEmojiLabel.m; sourceTree = "<group>"; };
+		1C1F8CA41D5C45670081930B /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		1C1F8CA51D5C45670081930B /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
+		1C1F8CA71D5C462C0081930B /* expressionImage_custom.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = expressionImage_custom.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +92,8 @@
 		1C1F8C711D585ED80081930B /* OOcollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				1C1F8CA01D5C453D0081930B /* EMOJLabel */,
+				1C1F8C9C1D5C43C80081930B /* extentension */,
 				1C1F8C981D5B39800081930B /* HMSegmentedControl */,
 				1C1F8C891D585F200081930B /* OOCollectionView */,
 				1C1F8C751D585ED80081930B /* AppDelegate.h */,
@@ -129,6 +142,27 @@
 				1C1F8C9A1D5B39800081930B /* HMSegmentedControl.m */,
 			);
 			path = HMSegmentedControl;
+			sourceTree = "<group>";
+		};
+		1C1F8C9C1D5C43C80081930B /* extentension */ = {
+			isa = PBXGroup;
+			children = (
+				1C1F8C9D1D5C43D90081930B /* UIColor+DXExtension.h */,
+				1C1F8C9E1D5C43D90081930B /* UIColor+DXExtension.m */,
+			);
+			name = extentension;
+			sourceTree = "<group>";
+		};
+		1C1F8CA01D5C453D0081930B /* EMOJLabel */ = {
+			isa = PBXGroup;
+			children = (
+				1C1F8CA41D5C45670081930B /* TTTAttributedLabel.h */,
+				1C1F8CA51D5C45670081930B /* TTTAttributedLabel.m */,
+				1C1F8CA11D5C45510081930B /* MLEmojiLabel.h */,
+				1C1F8CA21D5C45510081930B /* MLEmojiLabel.m */,
+				1C1F8CA71D5C462C0081930B /* expressionImage_custom.plist */,
+			);
+			name = EMOJLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +227,7 @@
 				1C1F8C7F1D585ED80081930B /* Assets.xcassets in Resources */,
 				1C1F8C971D598B020081930B /* bg_tk_003@2x.png in Resources */,
 				1C1F8C7D1D585ED80081930B /* Main.storyboard in Resources */,
+				1C1F8CA81D5C462C0081930B /* expressionImage_custom.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C1F8CA31D5C45510081930B /* MLEmojiLabel.m in Sources */,
 				1C1F8C7A1D585ED80081930B /* ViewController.m in Sources */,
 				1C1F8C9B1D5B39800081930B /* HMSegmentedControl.m in Sources */,
 				1C1F8C771D585ED80081930B /* AppDelegate.m in Sources */,
@@ -212,6 +248,8 @@
 				1C1F8C8C1D585F410081930B /* OOCollectionView.m in Sources */,
 				038EA0DE1D5B8DF400AD9F08 /* sendGiftView.m in Sources */,
 				1C1F8C741D585ED80081930B /* main.m in Sources */,
+				1C1F8C9F1D5C43D90081930B /* UIColor+DXExtension.m in Sources */,
+				1C1F8CA61D5C45670081930B /* TTTAttributedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
