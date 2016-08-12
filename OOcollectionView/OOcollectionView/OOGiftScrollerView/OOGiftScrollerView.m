@@ -39,7 +39,7 @@
     
     
     _giftScrollView = [[UIScrollView alloc]init];
-    _giftScrollView.frame = CGRectMake(0, 0, kScreenWidth, 111);
+    _giftScrollView.frame = CGRectMake(0, 0, kScreenWidth, 101);
 //    _giftScrollView.delegate = self;
     _giftScrollView.pagingEnabled = YES;
     _giftScrollView.scrollEnabled = NO;
@@ -50,9 +50,13 @@
 
 //    [self setgiftCollectView];
     
+    UIView *segmentView = [[UIView alloc]initWithFrame:CGRectMake(0, _giftScrollView.frame.origin.y + _giftScrollView.frame.size.height, kScreenWidth, 50)];
+    segmentView.backgroundColor = [UIColor whiteColor];
+    [self addSubview:segmentView];
+    
     
     //segment
-    self.pageControl = [[HMSegmentedControl alloc]initWithFrame:CGRectMake(0, _giftScrollView.frame.origin.y + _giftScrollView.frame.size.height, kScreenWidth, 50)];
+    self.pageControl = [[HMSegmentedControl alloc]initWithFrame:CGRectMake(50,0, kScreenWidth-100, 50)];
     [self.pageControl addTarget:self
                          action:@selector(pageControlValueChanged:)
                forControlEvents:UIControlEventValueChanged];
@@ -66,10 +70,19 @@
     self.pageControl.selectionIndicatorColor = [UIColor colorFromHexString:@"9d8be9"];
     self.pageControl.selectionIndicatorHeight = 2;
     self.pageControl.sectionTitles = [self.giftScrollerViewdelegate titlesInGiftView:self];
-
-//    int a = [self.giftScrollerViewdelegate giftView:self numberOfRowsInSection:0];
+    [segmentView addSubview:self.pageControl];
     
-    [self addSubview:self.pageControl];
+    //添加line
+    UIView *line1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.5)];
+    line1.backgroundColor = [UIColor colorFromHexString:@"999999"];
+    
+    UIView *line2 = [[UIView alloc]initWithFrame:CGRectMake(0, segmentView.bounds.size.height-1, kScreenWidth, 0.5)];
+    line2.backgroundColor = [UIColor colorFromHexString:@"999999"];
+    
+    [segmentView addSubview:line1];
+    [segmentView addSubview:line2];
+    
+    
     
     //初始化
     self.sendgiftview = [[sendGiftView alloc]initWithFrame:CGRectMake(0, 0, 100, 105)];

@@ -27,8 +27,8 @@
     CGFloat _height = self.bounds.size.height;
     
     self.backgroundColor = [UIColor whiteColor];
-    self.layer.borderWidth = 1;
-    self.layer.borderColor = [UIColor colorFromHexString:@"000000"].CGColor;
+//    self.layer.borderWidth = 1;
+//    self.layer.borderColor = [UIColor colorFromHexString:@"000000"].CGColor;
 
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = 15;
